@@ -1,0 +1,29 @@
+{
+  "prediction_interval_seconds": 30,
+  "model_retrain_hours": 24,
+  "min_confidence_for_safe": 0.8,
+  "history_pages_to_fetch": 50,
+  "max_history_records_for_training": 500,
+  "game_types": {
+    "30sec": {
+      "api_endpoint": "WinGo_30S",
+      "interval_seconds": 30,
+      "display_name": "30 Second"
+    },
+    "1min": {
+      "api_endpoint": "WinGo_1M",
+      "interval_seconds": 60,
+      "display_name": "1 Minute"
+    },
+    "3min": {
+      "api_endpoint": "WinGo_3M",
+      "interval_seconds": 180,
+      "display_name": "3 Minute"
+    },
+    "5min": {
+      "api_endpoint": "WinGo_5M",
+      "interval_seconds": 300,
+      "display_name": "5 Minute"
+    }
+  }
+}

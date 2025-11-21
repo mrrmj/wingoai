@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WinGo AI Prediction System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>WinGo AI Prediction System</h1>
+            <div class="status-bar">
+                <span id="connection-status">Disconnected</span>
+                <span id="user-status">Checking...</span>
+            </div>
+        </header>
+
+        <div class="game-tabs">
+            <button class="game-tab active" data-game="30sec">30 Second</button>
+            <button class="game-tab" data-game="1min">1 Minute</button>
+            <button class="game-tab" data-game="3min">3 Minute</button>
+            <button class="game-tab" data-game="5min">5 Minute</button>
+        </div>
+
+        <main>
+            <!-- 30 Second Prediction -->
+            <section class="prediction-section" id="prediction-30sec">
+                <h2>30 Second Prediction</h2>
+                <div class="prediction-card">
+                    <div class="prediction-info">
+                        <div class="period">Period: <span id="30sec-period">-</span></div>
+                        <div class="color">Color: <span id="30sec-color">-</span></div>
+                        <div class="confidence">
+                            <span>Confidence: </span>
+                            <div class="confidence-bar">
+                                <div class="confidence-fill" id="30sec-confidence-fill" style="width: 0%"></div>
+                            </div>
+                            <span id="30sec-confidence-value">0%</span>
+                        </div>
+                        <div class="status" id="30sec-status">-</div>
+                    </div>
+                </div>
+                
+                <div class="history-section">
+                    <h3>Recent Predictions</h3>
+                    <div class="history-list" id="history-30sec"></div>
+                </div>
+            </section>
+
+            <!-- 1 Minute Prediction -->
+            <section class="prediction-section" id="prediction-1min" style="display: none;">
+                <h2>1 Minute Prediction</h2>
+                <div class="prediction-card">
+                    <div class="prediction-info">
+                        <div class="period">Period: <span id="1min-period">-</span></div>
+                        <div class="color">Color: <span id="1min-color">-</span></div>
+                        <div class="confidence">
+                            <span>Confidence: </span>
+                            <div class="confidence-bar">
+                                <div class="confidence-fill" id="1min-confidence-fill" style="width: 0%"></div>
+                            </div>
+                            <span id="1min-confidence-value">0%</span>
+                        </div>
+                        <div class="status" id="1min-status">-</div>
+                    </div>
+                </div>
+                
+                <div class="history-section">
+                    <h3>Recent Predictions</h3>
+                    <div class="history-list" id="history-1min"></div>
+                </div>
+            </section>
+
+            <!-- 3 Minute Prediction -->
+            <section class="prediction-section" id="prediction-3min" style="display: none;">
+                <h2>3 Minute Prediction</h2>
+                <div class="prediction-card">
+                    <div class="prediction-info">
+                        <div class="period">Period: <span id="3min-period">-</span></div>
+                        <div class="color">Color: <span id="3min-color">-</span></div>
+                        <div class="confidence">
+                            <span>Confidence: </span>
+                            <div class="confidence-bar">
+                                <div class="confidence-fill" id="3min-confidence-fill" style="width: 0%"></div>
+                            </div>
+                            <span id="3min-confidence-value">0%</span>
+                        </div>
+                        <div class="status" id="3min-status">-</div>
+                    </div>
+                </div>
+                
+                <div class="history-section">
+                    <h3>Recent Predictions</h3>
+                    <div class="history-list" id="history-3min"></div>
+                </div>
+            </section>
+
+            <!-- 5 Minute Prediction -->
+            <section class="prediction-section" id="prediction-5min" style="display: none;">
+                <h2>5 Minute Prediction</h2>
+                <div class="prediction-card">
+                    <div class="prediction-info">
+                        <div class="period">Period: <span id="5min-period">-</span></div>
+                        <div class="color">Color: <span id="5min-color">-</span></div>
+                        <div class="confidence">
+                            <span>Confidence: </span>
+                            <div class="confidence-bar">
+                                <div class="confidence-fill" id="5min-confidence-fill" style="width: 0%"></div>
+                            </div>
+                            <span id="5min-confidence-value">0%</span>
+                        </div>
+                        <div class="status" id="5min-status">-</div>
+                    </div>
+                </div>
+                
+                <div class="history-section">
+                    <h3>Recent Predictions</h3>
+                    <div class="history-list" id="history-5min"></div>
+                </div>
+            </section>
+
+            <section class="instructions">
+                <h2>How to Use</h2>
+                <ol>
+                    <li>Register at: <a href="https://51game6.in/#/register?invitationCode=811214253486" target="_blank">Registration Link</a></li>
+                    <li>Login: <a href="https://51game6.in/#/login" target="_blank">Login</a></li>
+                    <li>Deposit minimum 500 INR: <a href="https://51game6.in/#/wallet/Recharge" target="_blank">Deposit</a></li>
+                    <li>Verify your account with our Telegram bot</li>
+                    <li>Start playing WinGo with AI predictions!</li>
+                </ol>
+                <p><strong>Game Links:</strong></p>
+                <ul>
+                    <li><a href="https://51game6.in/#/saasLottery/WinGo?gameCode=WinGo_30S&lottery=WinGo" target="_blank">30 Second WinGo</a></li>
+                    <li><a href="https://51game6.in/#/saasLottery/WinGo?gameCode=WinGo_1M&lottery=WinGo" target="_blank">1 Minute WinGo</a></li>
+                    <li><a href="https://51game6.in/#/saasLottery/WinGo?gameCode=WinGo_3M&lottery=WinGo" target="_blank">3 Minute WinGo</a></li>
+                    <li><a href="https://51game6.in/#/saasLottery/WinGo?gameCode=WinGo_5M&lottery=WinGo" target="_blank">5 Minute WinGo</a></li>
+                </ul>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
