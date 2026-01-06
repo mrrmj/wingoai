@@ -90,10 +90,16 @@ class MLEngine:
         features['streak_green'] = self._calculate_streak(df['color'], 'GREEN')
         features['streak_violet'] = self._calculate_streak(df['color'], 'VIOLET')
         
-        # Color frequency in last 10 rounds
+        # Color frequency in last 10 rounds - FIXED VERSION
+        # Create numeric mapping for colors to use in rolling operations
+        color_map = {'RED': 1, 'GREEN': 2, 'VIOLET': 3}
+        df['color_numeric'] = df['color'].apply(lambda x: color_map.get(x, 0))
+        
         for color in ['RED', 'GREEN', 'VIOLET']:
-            features[f'freq_{color}_last10'] = df['color'].rolling(window=10).apply(
-                lambda x: (x == color).sum() if len(x) == 10 else np.nan
+            color_code = color_map[color]
+            features[f'freq_{color}_last10'] = df['color_numeric'].rolling(window=10).apply(
+                lambda x: (x == color_code).sum() if len(x) == 10 else np.nan,
+                raw=True  # Use raw=True for faster numeric operations
             )
         
         # Parity features
